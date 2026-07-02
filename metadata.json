@@ -1,0 +1,8 @@
+{
+  "name": "Site do Grupo de ofertas da Amazon",
+  "description": "Um site de ofertas nerd e geek em estilo de história em quadrinhos com efeito parallax.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

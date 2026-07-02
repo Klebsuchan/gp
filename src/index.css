@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --font-comic: "Bangers", system-ui, sans-serif;
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  cursor: crosshair;
+}
+
+/* Custom interactive cursor for buttons and links */
+a, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"] {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="red" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>') 12 12, pointer !important;
+}
+
+@layer utilities {
+  .bg-halftone {
+    background-image: radial-gradient(circle, #000 2px, transparent 2.5px);
+    background-size: 12px 12px;
+  }
+  
+  .comic-shadow {
+    box-shadow: 6px 6px 0px #000000;
+  }
+
+  .comic-shadow-lg {
+    box-shadow: 12px 12px 0px #000000;
+  }
+  
+  .comic-shadow-sm {
+    box-shadow: 4px 4px 0px #000000;
+  }
+
+  .text-shadow-comic {
+    text-shadow: 3px 3px 0px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Modo Vilão (Easter Egg) */
+.villain-mode {
+  background-color: #1a0b2e !important;
+  color: #00ff41 !important;
+}
+
+.villain-mode * {
+  border-color: #ff00ff !important;
+}
+
+.villain-mode .bg-white, .villain-mode .bg-yellow-100, .villain-mode .bg-blue-100, .villain-mode .bg-green-100, .villain-mode .bg-purple-100 {
+  background-color: #2a1148 !important;
+  color: #00ff41 !important;
+}
+
+.villain-mode .bg-yellow-400 {
+  background-color: #ff00ff !important;
+  color: #fff !important;
+}
+
+.villain-mode .bg-blue-600 {
+  background-color: #00ffff !important;
+  color: #000 !important;
+}
+
+.villain-mode .text-black, .villain-mode .text-gray-700, .villain-mode .text-gray-800, .villain-mode .text-gray-600 {
+  color: #00ff41 !important;
+}
+
+.villain-mode .shadow-\[4px_4px_0px_\#000\],
+.villain-mode .shadow-\[6px_6px_0px_\#000\],
+.villain-mode .shadow-\[8px_8px_0px_\#000\],
+.villain-mode .shadow-\[12px_12px_0px_\#000\] {
+  box-shadow: 4px 4px 0px #00ffff !important;
+}
+
+.villain-mode .bg-halftone {
+  background-image: radial-gradient(circle, #00ffff 2px, transparent 2.5px);
+}
+
